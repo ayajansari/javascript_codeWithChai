@@ -27,8 +27,9 @@
         alert("outside img clicked ")
     })
     document.getElementById("owl").addEventListener("click",function(e){//e for event
-        alert("owl clicked ")
-    })
+        alert("owl clicked ")//here owl is inside images so if owl is clicked i.e images also clicked
+        //but owl is printed first because of bubbling.here img is on top of li is on top of ul is on top of div
+    },true)
 </script>
 
 
