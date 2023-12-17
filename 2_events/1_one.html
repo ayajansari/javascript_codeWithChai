@@ -21,15 +21,56 @@
 <script>
     // document.getElementById("owl").addEventListener("click",function(){
     //     alert("owl clicked")
-    // })
+    // },false)  //false is default value so no need to write
 
+    // "Bubbling" refers to the order in which event handler are executed in (DOM) hierarchy.
+    // (true means outer function is called -> middle function is called->inner function)
+    // (false means inner function is called -> middle function is called->outer function)
+
+    /*
     document.getElementById("images").addEventListener("click",function(e){//e for event
-        alert("outside img clicked ")
-    })
+        console.log("outside img clicked ")
+    },false)
     document.getElementById("owl").addEventListener("click",function(e){//e for event
-        alert("owl clicked ")//here owl is inside images so if owl is clicked i.e images also clicked
-        //but owl is printed first because of bubbling.here img is on top of li is on top of ul is on top of div
+        console.log("owl clicked  ")//here owl is inside images so if owl is clicked i.e images also clicked
+        //but owl is printed first because of bubbling(false i.e inner function first).
+    },false)
+    */
+
+    /*
+    document.getElementById("images").addEventListener("click",function(e){//e for event
+        console.log("outside img clicked ")
+        e.stopPropagation()//this will stop the bubbling
+        
     },true)
+    document.getElementById("owl").addEventListener("click",function(e){//e for event
+        console.log("owl clicked  ")
+         
+        
+    },true)//true i.e outer function is called first
+    */
+
+    //remove the li tag when clicked
+    /*
+    document.getElementById("images").addEventListener("click",function(e){
+        console.log(e.target)
+        console.log(e.target.parentNode)
+        let child=e.target.parentNode
+        // child.parentNode.removeChild(child) //first method
+        //child.remove()                      //second method
+
+    })
+    */
+   //in above code if we click on img then it is removed but if clicked on li then entire ul is removed
+    document.getElementById("images").addEventListener("click",function(e){
+        console.log(e.target.id)
+        if(e.target.tagName==='IMG'){
+            let child=e.target.parentNode
+            child.parentNode.removeChild(child) 
+            child.remove()  
+        }
+    })
+
 </script>
 
 
