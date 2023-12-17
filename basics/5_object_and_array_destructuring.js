@@ -17,6 +17,6 @@ console.log(instructer)//now we can use instructer keyword for obj1's courseInst
 //array destructuring
 const arr=["name",45,"email"]
 console.log(arr[2])
-const [Name,count,mail]=arr
+const [nm,count,mail]=arr
 console.log(count)
-console.log(Name)
+console.log(nm)
