@@ -19,9 +19,17 @@
    </div>
 </body>
 <script>
-    document.getElementById("owl").addEventListener("click",function(){
-        console.log("owl clicked")
+    // document.getElementById("owl").addEventListener("click",function(){
+    //     alert("owl clicked")
+    // })
+
+    document.getElementById("images").addEventListener("click",function(e){//e for event
+        alert("outside img clicked ")
+    })
+    document.getElementById("owl").addEventListener("click",function(e){//e for event
+        alert("owl clicked ")
     })
 </script>
+
 
 </html>
