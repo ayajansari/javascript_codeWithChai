@@ -1,13 +1,14 @@
-var x=89;
-function a(){
+// var x=89;
+// function a(){
      
-      function b(){
-            console.log(x);
-      }
-      return  b;
-}
-var z=a();
-z();
+//       function b(){
+//             console.log(x);
+//       }
+//       return  b;
+// }
+// var z=a();
+// z();
+
 
 // var x=10;
 // a();
@@ -21,9 +22,9 @@ z();
 //       var x=30;
 //       console.log(x);
 // }
+
+
 // function a(){
-      
-      
 //       c();
 //       function c(){
 //             console.log(b);
@@ -40,9 +41,7 @@ z();
 //       console.log(a);
 //       console.log(b);
 //       console.log(c);
-
-
 // }
 // console.log(a);
-// // console.log(b);
-// // console.log(c);
+// console.log(b);
+// console.log(c);
