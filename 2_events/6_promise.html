@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    //promise is used to remove callback hell
+    //They provide a cleaner and more structured approach to dealing with asynchronous 
+    //code compared to traditional callback patterns.
+
+    /*
+    //traditional way
+    api.createOrder(cart,function(orderId){
+        api.proceedToPayment(orderId)
+    }) 
+
+    promises 
+    const promise=createOrder(card);//initially it contains undefined but after createrOrder() promise contains object of values
+    promise.then(function(orderId){  //this will only be executed after promise contains some value(in future) and only once
+
+        proceedToPayment(orderId)
+    })
+    The Promise object represents the eventual completion (or failure) of an asynchronous operation and its resulting value.
+
+    */
+    //use console to see output
+    const GITHUB_ID="https://api.github.com/users/akshaymarch7"
+    const user=fetch(GITHUB_ID)
+    user.then(function(data){//until user got some value then() is not executed
+        console.log(data)
+    })
+    
+    /*
+    promise object is immutable no can change it's value which increase security of data
+    promise can have only 3 states:
+    1.fulfilled 2.rejected 3.pending
+    */
+
+    /*
+    another example of Promise
+    traditional way 
+
+    function first(a,callback){
+        setTimeout(function() {
+            console.log(a,"first");
+            callback();
+        }, 1000);
+    }
+    function second(b,callback){
+        setTimeout(function(){
+            console.log(b,"second")
+            callback()
+        },1000);
+    }
+    function third(c,callback){
+        setTimeout(function(){
+            console.log(c,"third")
+            callback()
+        },1000);
+    }
+    var a=10,b=30,c=50;
+    first(a,function (){
+        second(b,function(){
+            third(c,function(){
+                console.log("anonymous");
+            })
+        })
+    });
+
+    promise way
+    
+    function first(a){
+        return new Promise(function(resolve){   //return promise
+            setTimeout(function(){
+            console.log(a,"first")
+                resolve()   //return o/p
+            },1000);
+       })
+     
+    }
+    function second(b){
+       return new Promise(function(resolve){
+            setTimeout(function(){
+            console.log(b,"second")
+                resolve()
+            },1000);
+       })
+    }
+    function third(c){
+        return new Promise(function(resolve){
+            setTimeout(function(){
+            console.log(c,"third")
+                resolve()
+            },1000);
+       })
+    }
+    var a=10
+    var b=30
+    var c=50
+
+    first(a)
+    .then(function (){  //only executed when first() returns promise object
+        second(b);   
+    })
+    .then(function (){  //this function will be executed when  above then() return some o/p
+        return third(c);
+    });
+
+</script>
+</html>
