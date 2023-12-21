@@ -12,7 +12,7 @@ c();
 
 
 //the difference between above two is hoisting 
-//we can access a() before its declaration but can't acces b()
+//we can access a() before its declaration but can't acces c()
 
 //named function expression
 var d = function func_d(){

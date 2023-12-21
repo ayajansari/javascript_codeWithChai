@@ -27,7 +27,7 @@ console.log(a1);
 const a2=arr.filter((x)=> x%2==0);
 console.log(a2);
 
-// reduce
+// reduce ->The reduce function is an array method that is used to reduce an array to a single value
 //program to find max value from array
 function mx(arr){
       let maxi=0;

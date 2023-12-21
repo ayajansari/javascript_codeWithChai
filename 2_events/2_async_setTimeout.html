@@ -11,6 +11,7 @@
 </body>
 <script>
     /*
+
     //working of setTimeout  (setTimeOut and setIntervals allows for async operations in js,callbacks,promises,async/await also allows)
     setTimeout(function(){
         console.log("ayaj")
@@ -23,19 +24,20 @@
         console.log(change)
         change.innerHTML="Mohammad Ayaj"
      })
+     
      */
     
-    //write a program to stop setTimeout execution when clicked on button
-    const changeMe=setTimeout(function(){
-        let chg=document.getElementById("name")
-        chg.innerHTML="Mohammad Ayaj"
-        console.log("event executed")
-    },2000)
+    // //write a program to stop setTimeout execution when clicked on button
+    // const changeMe=setTimeout(function(){
+    //     let chg=document.getElementById("name")
+    //     chg.innerHTML="Mohammad Ayaj"
+    //     console.log("event executed")
+    // },2000)
 
-    document.getElementById('stop').addEventListener('click',function(){
-        clearTimeout(changeMe)
-        console.log("event Stopped")
-    })
+    // document.getElementById('stop').addEventListener('click',function(){
+    //     clearTimeout(changeMe)
+    //     console.log("event Stopped")
+    // })
 
     //Asynchronous programming is commonly used to handle tasks that might take some time to complete,
     // such as fetching data from a database or making a network request.
