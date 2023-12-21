@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    /*
+    const p=new Promise((resolve,reject)=>{
+        resolve("promise value resolved")
+    })
+
+    async function getData(){   //asyn function always returns a promise
+        return p;
+    }
+
+    const res=getData();
+    console.log(res) //print the promise
+    res.then(function(result){   //res=PromiseResult
+        console.log(result)    //print the result of promise
+    })
+    */
+
+    
+    /*
+
+    //async await combo is used to handle promises
+    //example of async and await
+
+    const p=new Promise((resolve,reject)=>{
+        resolve("promise value resolved")
+    })
+
+    //asyn function always returns a promise
+    //await is only used inside the async function
+    async function getData(){   
+        const val=await p;      //instead of p.then() we used await p i.e promise to be resolved
+        console.log(val)
+    }
+    getData();
+
+    */
+
+    /* 
+
+    //comparison of normal way of handling promises vs async-await
+
+    const p=new Promise((resolve,reject)=>{
+        setTimeout(function(){
+            resolve("promise value resolved")
+        },10000);  
+    })
+    //uncomment either 1 or 2 at the same times
+    //1
+    async function getRes(){
+        p.then((res)=>console.log(res)) //here js does not wait to resolve promise it will instantly go to next line and execute
+        console.log("namaste js")
+    }
+    getRes()
+    //2
+    // async function getRes(){
+    //     const val=await p;//here js will wait for promise to be resolved and after 10 sec it will move to below line and execute
+    //     console.log("namaste js")    //this will be executed after 10 sec
+    //     console.log(val)
+    // }
+    // getRes()
+    
+    */
+/*
+
+    //another example 
+    //in case of multiple await statements in function ->all await statements starts execution simultaneously
+    //in below ex. p1 will finish after 10 sec.(at 5 sec. p2 is finished) so at 10sec. p1 and p2 printed at same
+    //and 5 sec. of p3 is still remaining so after next 5 sec. (at 15sec) p3 is printed
+    const p1=new Promise((resolve,reject)=>{
+        setTimeout(function(){
+            resolve("promise value resolved 1" )
+        },10000);  
+    })
+    const p2=new Promise((resolve,reject)=>{
+        setTimeout(function(){
+            resolve("promise value resolved 2")
+        },5000);  
+    })
+    const p3=new Promise((resolve,reject)=>{
+        setTimeout(function(){
+            resolve("promise value resolved 3")
+        },15000);  
+    })
+    async function getRes(){
+        console.log("hello world")
+        const val=await p1;
+            
+        console.log(val)
+        console.log("namaste js")
+        const val1=await p2;
+            
+        console.log(val1)
+        console.log("namaste js")
+        const val2=await p3;
+            
+        console.log(val2)
+        console.log("namaste js")
+
+    }
+    getRes()
+
+*/
+  
+/*
+//The await keyword is used in JavaScript within an async function to wait for a promise 
+//to settle (either resolve or reject) before proceeding to the next line of code.
+
+    const API_URL="https://api.github.com/users/ayajansari"
+    async function handlePromise(){
+        const data=await fetch(API_URL)     //returns response object        
+        const jsonValue=await data.json()      //convert into json value
+        console.log(jsonValue)
+
+    }
+    handlePromise()
+
+    */
+
+//    /*
+   //error handling 
+
+   const API_URL="https://api.github.com/users/ayajansari"
+    async function handlePromise(){
+        try{
+            const data=await fetch(API_URL)     //returns response object        
+            const jsonValue=await data.json()      //convert into json value
+            console.log(jsonValue)
+        }
+        catch(err){ //if any error occured in 135 or 136 137 then this piece of code will be executed
+            console.log(err)
+        }
+    }
+    handlePromise()
+
+</script>
+</html>

@@ -105,11 +105,14 @@
 
     first(a)
     .then(function (){  //only executed when first() returns promise object
-        second(b);   
+        return second(b);   
+        
+        //if you dont return promise value then js automatically make the returned value into promise object
     })
     .then(function (){  //this function will be executed when  above then() return some o/p
         return third(c);
     });
 
+    */
 </script>
 </html>

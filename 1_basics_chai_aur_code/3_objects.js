@@ -1,17 +1,20 @@
+//objects are a fundamental data type that allows you to store and organize data using key-value pairs.
 //objects can be represented in two ways -> by literals and by singleton
-// by object literals
 
-// const user={ //key-value pairs,
-//     name:"ayaj",   
-//     "full name":"ansari ayaj", //keys are string type but we dont write then also fine
-//     age:21,
-//     email:"ayajansari@gmail.com",
-//     isLoggedIn:false
-// }
-// //access values
-// console.log(user.name)
-// console.log(user["name"])   //keys are string type
-// console.log(user["full name"])
+/*   by object literals
+const user={ //key-value pairs,
+    name:"ayaj",   
+    "full name":"ansari ayaj", //keys are string type but we dont write then also fine
+    age:21,
+    email:"ayajansari@gmail.com",
+    isLoggedIn:false
+}
+
+console.log(user.name)
+console.log(user["name"])   //keys are string type
+console.log(user["full name"])
+
+*/
 
 //add symbol to object
 const mySym=Symbol("key1")

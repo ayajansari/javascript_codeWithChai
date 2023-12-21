@@ -1,5 +1,5 @@
-const arr = [0, 1, 34, 33, 45, 5];
-const arr1 = new Array(2, 3, 4, 5); //not a dynamic allocation
+const arr = [0, 1, 34, 33, 45, 5];  //declaration of array through array literal
+const arr1 = new Array(2, 3, 4, 5); //not a dynamic allocation.its declaration of array through constructor
 console.log(arr[3]);
 
 arr.push(5)//insert value at end

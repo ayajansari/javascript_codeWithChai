@@ -1,3 +1,6 @@
+// Destructuring is a feature in JavaScript that allows you to extract values 
+// from arrays or properties from objects into distinct variables.
+
 //object destructuring
 const obj1={
     email:"one@gmail.com",
