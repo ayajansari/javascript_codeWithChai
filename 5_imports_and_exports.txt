@@ -1,0 +1,30 @@
+difference between import {abc} from xyz and import abc from xys
+
+import { abc } from xyz:
+
+This syntax is used when the module xyz exports an object or has named exports.
+It allows you to specifically import only the named export abc from the module.
+For example, if module xyz exports several variables or functions, you can choose to import only the ones you need.
+
+// In module xyz.js
+export const abc = 42;  //named export
+export const def = 'Hello';
+
+// In another module
+import { abc } from './xyz';
+console.log(abc); // Outputs 42
+
+
+import abc from xyz:
+
+This syntax is used when the module xyz has a default export. A module can have at most one default export.
+The default export can be any value (function, object, primitive, etc.).
+When using this syntax, you are importing the default export of the module and can choose any local name (in this case, abc) for it.
+
+// In module xyz.js
+const abc = 42;
+export default abc;
+
+// In another module
+import abc from './xyz';
+console.log(abc); // Outputs 42
