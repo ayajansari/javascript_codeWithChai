@@ -45,8 +45,8 @@
 
     */
 
-    /* 
-
+    
+/*
     //comparison of normal way of handling promises vs async-await
 
     const p=new Promise((resolve,reject)=>{
@@ -56,11 +56,11 @@
     })
     //uncomment either 1 or 2 at the same times
     //1
-    async function getRes(){
-        p.then((res)=>console.log(res)) //here js does not wait to resolve promise it will instantly go to next line and execute
-        console.log("namaste js")
-    }
-    getRes()
+    // async function getRes(){
+    //     p.then((res)=>console.log(res)) //here js does not wait to resolve promise it will instantly go to next line and execute
+    //     console.log("namaste js")
+    // }
+    // getRes()
     //2
     // async function getRes(){
     //     const val=await p;//here js will wait for promise to be resolved and after 10 sec it will move to below line and execute
@@ -69,7 +69,11 @@
     // }
     // getRes()
     
-    */
+
+    NOTE- When you use the await keyword, it pauses the execution of the async function until the promise is resolved. 
+    However, this pause only affects the async function itself, not the entire program. Other code outside of the async function
+    can continue to execute while the async function is awaiting a promise.
+   */ 
 /*
 
     //another example 
@@ -126,7 +130,7 @@
 
     */
 
-//    /*
+    /*
    //error handling 
 
    const API_URL="https://api.github.com/users/ayajansari"
@@ -141,6 +145,6 @@
         }
     }
     handlePromise()
-
+*/
 </script>
 </html>
